@@ -1,0 +1,71 @@
+---
+title: "R Markdown Introduction"
+author: "Natsuko Wise"
+date: "2023-01-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = TRUE)
+```
+
+## Basics of R Markdown
+Markdwown is a simple formatting syntax for authoring:
+
+* HTML
+* PDF
+* MS Word documents
+
+## Penguin Plots: Practice analysis
+
+### Setting up my environment 
+Notes: Setting up my R environment by loading **'tidyverse'** and **'palmerpenguins'** packages:
+```{r loading packages, warning=TRUE}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+### Flipper and Body Mass by Year
+Here, I plot the flipper length against body mass by year. 
+```{r flipper length vs body mass by year, warning=FALSE}
+df<-penguins
+
+ggplot(data=df)+
+  geom_point(mapping = aes(x=flipper_length_mm, y=body_mass_g, color=species))+
+  labs(title = "Flipper Length vs Body Mass", x= "Flipper Length (mm)", y= "Body Mass (g)")+
+  facet_wrap(~year)
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Save ggplot
+```{r save ggplot, message=FALSE, warning=FALSE}
+ggsave("penguin_year.png",
+       width = 16, height=8)
+```
+
+
+## Key Notes
+
+1. **_Italic_**
+- No Space and add * or _ between text. You can make bold + italic combined by adding both * and _.
+
+  - Example: _I'm perfect human._
+
+2. **_Bold_**
++ No Space and add ** between text.
+  - Example:
+    **I'm perfect human.**
+
+3. **_Link_**
++ Add [ ] to specify the name to be showed up, add link using ( ).
+  - [rmarkdowown.rstudio.com](https://rmarkdown.rstudio.com/authoring_basics.html)
++ To add just link itself, use < >.
+  - <https://rmarkdown.rstudio.com/authoring_basics.html>
+
+4. **_Add GIF_**
++ Add ![ ] to specify the name to be showed up, add link using ( ).
++ Don't forget to add **.gif** in the link.
+
+![Party Parrot GIFs](https://tenor.com/view/parrot-gif-22529125.gif)
