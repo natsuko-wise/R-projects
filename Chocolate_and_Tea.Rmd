@@ -138,7 +138,7 @@ ggplot(cocoa_70, aes(x=company_location,y=rating))+
   annotate("text",label="Italy has highest rating", x=29, y=5, color="darkslategray3")
 ```
 
-Since the a-axis is too crowed to see, I used ggsave to expand the image size:
+Since the x-axis is too crowed to see, I used ggsave to expand the image size:
 
 ```{r cocoa_70_ggsave}
 ggsave("company_location_Rating.png", width = 16, height=8)
