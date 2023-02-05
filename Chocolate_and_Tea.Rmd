@@ -145,5 +145,5 @@ ggsave("company_location_Rating.png", width = 16, height=8)
 ```
 ![](company_location_Rating.png)
 
-**Observations:** Italy has best rating chocolate bars between 70% cocoa contents.  
+**Observations:** Italy has the best rated chocolate bars at 70% cocoa contents.  
 
